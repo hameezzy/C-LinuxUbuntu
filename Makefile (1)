@@ -1,0 +1,20 @@
+#Hamza Ilyas
+#hi3zk
+#3/12/18
+#Makefile
+
+CXX = clang++ $(CXXFLAGS)
+DEBUG = -Wall -g
+CXXFLAGS = -Wall -O2
+OFILES = hashTable.o timer.o wordPuzzle.o
+.SUFFIXES: .o .cpp
+
+a.out: $(OFILES)
+	$(CXX) $(DEBUG) $(OFILES)
+
+clean:
+	-rm *.o *~ a.out
+
+hashTable.o: hashTable.cpp hashTable.h
+timer.o: timer.cpp timer.h
+wordPuzzle.o: wordPuzzle.cpp
